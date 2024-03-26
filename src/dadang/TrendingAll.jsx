@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 
 const TrendingAll = () => {
   const API_KEY = "60234f6ae15d81b2aa5b3f6b1cd6cccc";
@@ -39,7 +40,8 @@ const TrendingAll = () => {
 
   return (
     <div>
-      <h1 className="text-center my-5 font-bold text-2xl">Trending All</h1>
+      <Navbar />
+      <h1 className="text-center my-5 font-bold text-4xl">Trending All</h1>
       <div className="max-w-8xl mx-auto flex flex-col justify-center items-center gap-8 pb-24">
         <form className="my-5 ms-10">
           <select onChange={handleLanguage} className="select-cst">

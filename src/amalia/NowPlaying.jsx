@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 
 const API_KEY = "5e4a160d88ab953fadaaed22916b8438";
 
@@ -54,6 +55,8 @@ const PlayingNow = () => {
 
   return (
     <div className="container mx-auto">
+      <Navbar />
+
       <h1 className="text-3xl font-bold mt-8 mb-4">Now Playing Movies</h1>
       <div className="mb-4">
         <label htmlFor="sort" className="mr-2 font-bold">
@@ -78,7 +81,7 @@ const PlayingNow = () => {
           <div
             key={playing.id}
             onClick={() => {
-              navigate("/DetailPlaying-Now", { state: { id: playing.id } });
+              navigate("/detail-playing-now", { state: { id: playing.id } });
             }}
             className="border border-gray-300 rounded p-4"
           >
