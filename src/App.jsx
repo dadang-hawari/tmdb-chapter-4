@@ -52,6 +52,5 @@ export default function App() {
       element: <TopRated />,
     },
   ]);
-
   return <RouterProvider router={router} />;
 }
