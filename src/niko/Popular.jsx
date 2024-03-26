@@ -38,7 +38,7 @@ const MoviePopular = () => {
             onClick={() => {
               navigate("/movie-details", { state: { id: movie.id } });
             }}
-            className="block max-w-sm p-6 bg-slate-900  rounded-lg shadow hover:bg-gray-800  transition duration-300 hover:filter hover:blur-sm"
+            className="block max-w-sm p-6 bg-slate-900  rounded-lg shadow hover:bg-gray-800  transition duration-300 hover:filter hover:grayscale hover:scale-105 cursor-pointer"
           >
             <img
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
