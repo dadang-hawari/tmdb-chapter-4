@@ -4,16 +4,16 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_KEY = "872a56ce8dffb321ded14ae4c6f4bbeb";
+const API_KEY = "de1e0b98496c6434dd3e14f9554f5287";
 
-const MoviePopular = () => {
+const TopRated = () => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
 
   const popularMovies = async () => {
     try {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&include_adult=false&api_key=${API_KEY}`,
+        `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&include_adult=false&api_key=${API_KEY}`,
         { headers: { accept: "application/json" } }
       );
       console.log("response data", response.data);
@@ -29,14 +29,14 @@ const MoviePopular = () => {
   return (
     <div className="bg-slate-900">
       <header className="bg-black text-red-500 py-4 px-4">
-        <h1 className="text-4xl font-bold text-center">Popular Movies</h1>
+        <h1 className="text-4xl font-bold text-center">Top Rated Movies</h1>
       </header>
       <div className="container mx-auto grid grid-cols-4 gap-8 pt-5">
         {movies.map((movie) => (
           <div
             key={movie.id}
             onClick={() => {
-              navigate("/movie-details", { state: { id: movie.id } });
+              navigate("/top-movies-details", { state: { id: movie.id } });
             }}
             className="block max-w-sm p-6 bg-slate-900  rounded-lg shadow hover:bg-gray-800  transition duration-300 hover:filter hover:grayscale hover:scale-105 cursor-pointer"
           >
@@ -77,4 +77,4 @@ const MoviePopular = () => {
   );
 };
 
-export default MoviePopular;
+export default TopRated;
