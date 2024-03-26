@@ -76,7 +76,7 @@ export default function MovieDetailZ() {
               <button
                 className="mt-7 px-4 py-2  font-sans bg-white border border-solid border-gray-400 text-black rounded-md shadow-md hover:bg-gray-00 hover:border-gray-500 focus:outline-none focus:ring focus:ring-gray-300"
                 onClick={() => {
-                  navigate("/TopRated", { state: { id: detail?.id } });
+                  navigate("/top-rated", { state: { id: detail?.id } });
                 }}
               >
                 <div className="w-5 h-5 ">
