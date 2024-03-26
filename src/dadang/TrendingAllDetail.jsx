@@ -7,9 +7,9 @@ export default function TrendingAllDetail() {
   const [detail, setDetail] = useState(null);
 
   const API_KEY = "60234f6ae15d81b2aa5b3f6b1cd6cccc";
-  const detailType = location.state.type === "tv";
+  const isTypeTV = location.state.type === "tv";
 
-  const BASE_URL = detailType
+  const BASE_URL = isTypeTV
     ? "https://api.themoviedb.org/3/tv/"
     : "https://api.themoviedb.org/3/movie/";
   const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500";
@@ -51,7 +51,7 @@ export default function TrendingAllDetail() {
             <div className="relative">
               <img
                 src={`https://image.tmdb.org/t/p/w500/${detail?.poster_path}`}
-                alt={detailType ? detail?.name : detail?.title}
+                alt={isTypeTV ? detail?.name : detail?.title}
                 className="max-w-[300px] rounded-md pt-10 max-sm:max-w-full"
               />
               <h2 className="bg-slate-800 p-3 text-center rounded-t-md text-white w-full absolute top-0 left-0">
@@ -62,11 +62,11 @@ export default function TrendingAllDetail() {
 
             <div className="flex flex-col gap-y-2">
               <h2 className="text-3xl font-bold">
-                {detailType ? detail?.name : detail?.title}
+                {isTypeTV ? detail?.name : detail?.title}
                 <span className="font-normal text-2xl ms-2">
                   (
                   {parseInt(
-                    detailType ? detail?.first_air_date : detail?.release_date
+                    isTypeTV ? detail?.first_air_date : detail?.release_date
                   )}
                   )
                 </span>
@@ -81,7 +81,7 @@ export default function TrendingAllDetail() {
                 {detail?.popularity}
               </h2>
               <h2>
-                {detailType ? (
+                {isTypeTV ? (
                   <span>
                     <b>First Air Date:</b> {detail?.first_air_date}
                   </span>
