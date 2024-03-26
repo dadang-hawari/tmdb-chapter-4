@@ -42,7 +42,7 @@ const TrendingAll = () => {
     <div>
       <Navbar />
       <h1 className="text-center my-5 font-bold text-4xl">Trending All</h1>
-      <div className="max-w-8xl mx-auto flex flex-col justify-center items-center gap-8 pb-24">
+      <div className="max-w-8xl mx-auto flex flex-col justify-center items-center gap-8 pb-24 text-black">
         <form className="my-5 ms-10">
           <select onChange={handleLanguage} className="select-cst">
             <option>Language</option>
