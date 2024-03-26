@@ -83,11 +83,11 @@ export default function TrendingAllDetail() {
               <h2>
                 {detailType ? (
                   <span>
-                    <strong>First Air Date:</strong> {detail?.first_air_date}
+                    <b>First Air Date:</b> {detail?.first_air_date}
                   </span>
                 ) : (
                   <span>
-                    <strong>Release Date:</strong> {detail?.release_date}
+                    <b>Release Date:</b> {detail?.release_date}
                   </span>
                 )}
               </h2>
