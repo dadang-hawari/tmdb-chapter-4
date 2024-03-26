@@ -27,7 +27,7 @@ const TopRated = () => {
     popularMovies();
   });
   return (
-    <div className="bg-slate-900">
+    <div className="bg-white ">
       <div className="navbar bg-base-100 px-20">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl text-gray" href="/">
@@ -56,18 +56,18 @@ const TopRated = () => {
         <div class="hero-content text-center">
           <div class="max-w-md">
             <h1 class="text-5xl font-bold">Top Rated Movies</h1>
-           
           </div>
         </div>
       </div>
-      <div className="container mx-auto grid grid-cols-4 gap-8 pt-5">
+
+      <div className="container mx-auto grid grid-cols-4 gap-8 py-10 ">
         {movies.map((movie) => (
           <div
             key={movie.id}
             onClick={() => {
               navigate("/top-movies-details", { state: { id: movie.id } });
             }}
-            className="block max-w-sm p-6 bg-slate-900  rounded-lg shadow hover:bg-gray-800  transition duration-300 hover:filter hover:grayscale hover:scale-105 cursor-pointer"
+            className="block max-w-sm p-6 bg-base-200 text-black rounded-lg"
           >
             <img
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
@@ -75,15 +75,15 @@ const TopRated = () => {
               className="w-full h-fit object-cover"
             />
             <div className="p-2">
-              <h2 className="text-lg font-semibold text-white mb-2 text-center">
+              <h2 className="text-lg font-semibold text-black mb-2 text-center">
                 {movie.title}
               </h2>
-              <p className="text-white text-center ">{movie.release_date}</p>
+              <p className="text-black text-center ">{movie.release_date}</p>
               <div className="flex flex-wrap space-x-1 justify-center items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  fill="white"
+                  fill="#EAB308"
                   class="w-5 h-5"
                 >
                   <path
@@ -93,9 +93,9 @@ const TopRated = () => {
                   />
                 </svg>
 
-                <div className="text-white text-center">
+                <div className="text-black text-center">
                   {movie.vote_average.toFixed(1)}
-                  <span className="text-white">/10</span>
+                  <span className="text-black">/10</span>
                 </div>
               </div>
             </div>
