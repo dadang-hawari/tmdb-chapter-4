@@ -9,6 +9,5 @@ export default function App() {
       element: <Home />,
     },
   ]);
-
   return <RouterProvider router={router} />;
 }

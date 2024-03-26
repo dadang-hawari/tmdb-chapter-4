@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const API_KEY = "872a56ce8dffb321ded14ae4c6f4bbeb";
+const API_KEY = "de1e0b98496c6434dd3e14f9554f5287";
 
 export default function MovieDetail() {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ export default function MovieDetail() {
   return (
     <div>
       <div
-        className="bg-cover bg-fixed bg-no-repeat bg-gray-500 bg-blend-multiply h-auto"
+        className="bg-cover bg-fixed bg-no-repeat bg-gray-500 bg-blend-multiply h-auto "
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/w500/${detail?.backdrop_path})`,
         }}
