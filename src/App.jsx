@@ -7,6 +7,7 @@ import MoviePopular from "./niko/Popular";
 import MovieDetail from "./niko/MovieDetails";
 import PopularTv from "./gihon/PopularTv";
 import Detail from "./gihon/detail";
+import NowPlaying from "./amalia/NowPlaying";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -41,6 +42,10 @@ export default function App() {
     {
       path: "/tv-details",
       element: <Detail />,
+    },
+    {
+      path: "/now-playing",
+      element: <NowPlaying />,
     },
     {
       path: "/top-rated",
