@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const API_KEY = "d8d031ba0ba20b0e5d75222095116691";
 
-const detail = () => {
+const Detail = () => {
   const navigate = useNavigate();
   const [detail, setDetail] = useState(null);
   let location = useLocation();
@@ -67,4 +67,4 @@ const detail = () => {
   );
 };
 
-export default detail;
+export default Detail;
