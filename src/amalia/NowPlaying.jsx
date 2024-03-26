@@ -45,9 +45,17 @@ const PlayingNow = () => {
           (a, b) => new Date(a.release_date) - new Date(b.release_date)
         );
       case "original_title.asc":
-        return movies.sort((a, b) => a.title.localeCompare(b.title));
+        return movies.sort((a, b) => {
+          if (a.title < b.title) return -1;
+          if (a.title > b.title) return 1;
+          return 0;
+        });
       case "original_title.desc":
-        return movies.sort((a, b) => b.title.localeCompare(a.title));
+        return movies.sort((a, b) => {
+          if (a.title > b.title) return -1;
+          if (a.title < b.title) return 1;
+          return 0;
+        });
       default:
         return movies;
     }
