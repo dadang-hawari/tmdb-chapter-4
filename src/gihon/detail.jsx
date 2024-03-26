@@ -28,41 +28,70 @@ const Detail = () => {
   }, []);
 
   return (
-    <div className="">
-      <div key={detail?.id} className="">
-        <div className="flex justify-center mt-52 ">
-          <div className="flex flex-col gap-y-3 w-[500px] h-[full] border-2 border-black rounded-3xl items-center">
-            <div className="font-black">{detail?.name}</div>
-            <div className="mx-5 mt-3">"{detail?.overview}"</div>
-            <div className="mt-3">
-              created by : "{detail?.created_by[0]?.name}
-              {", "}
-              {detail?.created_by[1]?.name}"
-            </div>
-            <div className="">genre : "{detail?.genres[0]?.name}"</div>
+    <div>
+      <header className="bg-black text-red-500 py-4 px-4">
+        <h1 className="text-4xl font-bold text-center">Detail</h1>
+      </header>
+      <div
+        className="bg-cover bg-fixed bg-no-repeat bg-gray-500 bg-blend-multiply h-auto"
+        style={{
+          backgroundImage: `url(https://image.tmdb.org/t/p/w500/${detail?.backdrop_path})`,
+        }}
+      >
+        <div className="flex justify-center container mx-auto py-20 gap-10 items-center backdrop-blur-sm	 ">
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${detail?.poster_path}`}
+            alt={detail?.title}
+            className="w-auto h-auto  rounded-lg"
+          />
+          <div
+            className="text-white font-sans bg-gray-600/75 rounded-xl shadow-lg p-10 "
+            key={detail?.id}
+          >
+            <div className="p-4">
+              <div className="font-black text-3xl">{detail?.name}</div>
+              <h2 className="text-3xl font-semibold mb-2">{detail?.title}</h2>
 
-            <div>
-              <button
-                className="bg-black text-white mt-6 rounded-3xl py-3 mb-3 px-8 font-medium inline-block mr-4 hover:bg-transparent hover:border-black hover:text-black duration-300 hover:border border border-transparent"
-                onClick={() => navigate("/")}
-              >
-                back
-              </button>
+              <p className="text-lg mb-2 border-b-2 pb-3 ">
+                {detail?.overview}
+              </p>
+              <p className="text-lg mb-1">
+                created by : "{detail?.created_by[0]?.name}
+                {", "}
+                {detail?.created_by[1]?.name}"
+              </p>
+              <p className="text-lg mb-1">
+                Vote Average: {parseFloat(detail?.vote_average).toFixed(1)}/10
+              </p>
+              <p className="text-lg mb-1">Votes: {detail?.vote_count}</p>
+              <p className="text-lg mb-1">
+                Budget:{" "}
+                {detail?.budget
+                  ? `$${detail?.budget.toLocaleString("en-US")}`
+                  : "N/A"}
+              </p>
+              <p className="text-lg mb-1">
+                Revenue:{" "}
+                {detail?.revenue
+                  ? `$${detail?.revenue.toLocaleString("en-US")}`
+                  : "N/A"}
+              </p>
+              <p className="text-lg mb-1">Runtime: {detail?.runtime} Minutes</p>
+              <p className="text-lg mb-1">
+                Genres: {detail?.genres?.map((genre) => genre.name).join(", ")}
+              </p>
+              <div>
+                <button
+                  className="bg-black text-white mt-6 rounded-3xl py-3 mb-3 px-8 font-medium inline-block mr-4 hover:bg-transparent hover:border-black hover:text-white duration-300 hover:border border border-transparent"
+                  onClick={() => navigate("/popular-tv")}
+                >
+                  back
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <div className="justify-center flex flex-wrap gap-20 mt-10">
-        {movies.map((tv) => (
-          <div key={tv.id} className="">
-            <div className="flex flex-col gap-y-3 w-[500px] h-[800px] border-2 border-black rounded-3xl items-center">
-              <div className="font-black">{tv.name}</div>
-
-              <div className="mx-5">{tv.overview}</div>
-            </div>
-          </div>
-        ))}
-      </div> */}
     </div>
   );
 };
