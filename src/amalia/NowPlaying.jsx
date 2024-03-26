@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const API_KEY = "5e4a160d88ab953fadaaed22916b8438";
 
 const PlayingNow = () => {
+  const navigate = useNavigate();
   const [playings, setPlaying] = useState([]);
   const [sortBy, setSortBy] = useState("popularity.desc");
 
@@ -73,7 +75,13 @@ const PlayingNow = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {sortMovies(playings).map((playing) => (
-          <div key={playing.id} className="border border-gray-300 rounded p-4">
+          <div
+            key={playing.id}
+            onClick={() => {
+              navigate("/DetailPlaying-Now", { state: { id: playing.id } });
+            }}
+            className="border border-gray-300 rounded p-4"
+          >
             <img
               src={`https://image.tmdb.org/t/p/w500/${playing.poster_path}`}
               alt={playing.title}
