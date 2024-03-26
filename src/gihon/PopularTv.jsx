@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const API_KEY = "d8d031ba0ba20b0e5d75222095116691";
 
-const popularTv = () => {
+const PopularTv = () => {
   const [query, setQuery] = useState("");
   const [tv, settv] = useState([]);
   const navigate = useNavigate();
@@ -67,4 +67,4 @@ const popularTv = () => {
   );
 };
 
-export default popularTv;
+export default PopularTv;
