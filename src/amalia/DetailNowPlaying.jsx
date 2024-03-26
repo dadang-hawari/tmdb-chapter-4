@@ -14,7 +14,7 @@ export default function NowPlayingDetail() {
       const response = await axios.get(
         `https://api.themoviedb.org/3/movie/${location.state.id}?language=en-US&api_key=${API_KEY}`
       );
-      setDetail(response.data.results);
+      setDetail(response.data);
     } catch (error) {
       console.error("Error fetching data: ", error);
     }
@@ -67,7 +67,7 @@ export default function NowPlayingDetail() {
                     />
                   </svg>
                 </div>
-                <span class="sr-only">Icon description</span>
+                <span className="sr-only">Icon description</span>
               </button>
             </div>
           </div>

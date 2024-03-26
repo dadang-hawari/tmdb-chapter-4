@@ -37,9 +37,9 @@ export default function TrendingAllDetail() {
       style={{
         backgroundImage: `url('${IMG_BASE_URL + detail?.backdrop_path}')`,
       }}
-      className="bg-cover h-screen max-sm:h-fit "
+      className="bg-cover h-screen max-md:h-auto max-sm:h-fit "
     >
-      <div className="backdrop-blur-3xl h-screen max-sm:h-fit">
+      <div className="backdrop-blur-3xl h-screen max-sm:h-fit text-black">
         <div key={detail?.id} className="pt-[20px] max-w-[1104px] mx-auto px-5">
           <Link
             to={"/trending-all"}

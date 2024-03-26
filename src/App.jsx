@@ -1,6 +1,5 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./Home";
 import TrendingAll from "./dadang/TrendingAll";
 import TrendingAllDetail from "./dadang/TrendingAllDetail";
 import MoviePopular from "./niko/Popular";
@@ -8,23 +7,23 @@ import MovieDetail from "./niko/MovieDetails";
 import PopularTv from "./gihon/PopularTv";
 import Detail from "./gihon/detail";
 import NowPlaying from "./amalia/NowPlaying";
+import NowPlayingDetail from "./amalia/DetailNowPlaying";
+import SearchMovies from "./SearchMovies";
+import TopRated from "./zanetta/TopRated";
+import MovieDetailZ from "./zanetta/TopMoviesDetail";
 
 export default function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <SearchMovies />,
     },
     {
       path: "/trending-all",
       element: <TrendingAll />,
     },
     {
-      path: "/trending-all",
-      element: <TrendingAll />,
-    },
-    {
-      path: "/trending-all",
+      path: "/trending-all-detail",
       element: <TrendingAllDetail />,
     },
     {
@@ -48,8 +47,16 @@ export default function App() {
       element: <NowPlaying />,
     },
     {
+      path: "/detail-playing-now",
+      element: <NowPlayingDetail />,
+    },
+    {
       path: "/top-rated",
       element: <TopRated />,
+    },
+    {
+      path: "/top-movies-details",
+      element: <MovieDetailZ />,
     },
   ]);
   return <RouterProvider router={router} />;

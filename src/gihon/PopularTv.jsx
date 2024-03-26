@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 
 const API_KEY = "d8d031ba0ba20b0e5d75222095116691";
 
@@ -29,6 +30,8 @@ const PopularTv = () => {
   return (
     <div className="">
       <header className="bg-black text-red-500 py-4 px-4">
+        <Navbar />
+
         <h1 className="text-4xl font-bold text-center">Popular Tv</h1>
       </header>
       <div className="justify-center flex flex-wrap gap-20 mt-10">
